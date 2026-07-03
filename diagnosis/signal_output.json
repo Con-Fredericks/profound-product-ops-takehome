@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "quote": "I found out we launched a new citations feature because a customer asked me about it on a call. I had to put them on hold to go look it up.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 3,
+    "fixability": 3,
+    "rationale": "The EM was caught unaware of a shipped feature during a live customer call and had to put the customer on hold\u2014a customer-visible failure showing product knowledge didn't reach the people who need it."
+  },
+  {
+    "id": 2,
+    "quote": "Every time I onboard a new customer I basically rebuild my whole deck from scratch. There's no standard.",
+    "category": "no_standards",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "EM explicitly states they rebuild onboarding decks from scratch every time because no standard exists, creating recurring inefficiency that risks inconsistent customer experience and slower time-to-value."
+  },
+  {
+    "id": 3,
+    "quote": "We had a customer churn last quarter and honestly I think part of it was they just never really got started. They ran one agent in week one and then nothing.",
+    "category": "no_activation_loop",
+    "urgency": 3,
+    "fixability": 2,
+    "rationale": "This describes actual churn that already happened due to lack of a designed onboarding path to drive usage beyond initial setup, requiring a new activation workflow to fix."
+  },
+  {
+    "id": 4,
+    "quote": "I have a whole Notion page I built myself for explaining how sentiment works. Three other EMs have asked me to send it to them.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "An EM created valuable content that multiple peers need but it exists only in a personal workspace and must be sent individually on request, indicating knowledge isn't distributed through shared channels."
+  },
+  {
+    "id": 5,
+    "quote": "When something new ships I usually find out from the Slack announcement but half the time I don't really know what it means for my customers until weeks later.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "The EM sees the announcement but lacks actionable context on customer impact for weeks, creating recurring friction that risks missed expansion opportunities and undermines customer conversations."
+  },
+  {
+    "id": 6,
+    "quote": "One of my customers asked me to walk them through the difference between citations and prompt volumes and I kind of fumbled it. I know what they do separately but I've never had to explain how they fit together.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 3,
+    "fixability": 3,
+    "rationale": "The EM lacks conceptual knowledge needed to answer a customer question competently and fumbled the explanation in front of the customer - a customer-facing failure that already happened, fixable with better internal documentation or enablement materials."
+  },
+  {
+    "id": 7,
+    "quote": "We built this whole competitive tracking workflow for a customer in Q1. It was really good. I have no idea if anyone else knows it exists.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "A valuable workflow was created but not shared or documented, creating recurring friction as other EMs can't find or reuse it, directly risking redundant work and inconsistent customer outcomes."
+  },
+  {
+    "id": 8,
+    "quote": "My customers who are succeeding are the ones who came in with a specific question they wanted to answer. The ones who struggle are the ones who just wanted to 'explore.'",
+    "category": "no_activation_loop",
+    "urgency": 2,
+    "fixability": 2,
+    "rationale": "Success depends on what the customer brings rather than a designed onboarding path that converts exploration into specific wins, creating recurring friction with plausible churn risk for \"explorers.\""
+  },
+  {
+    "id": 9,
+    "quote": "I asked two other EMs how they explain agents to new customers. I got three completely different answers.",
+    "category": "no_standards",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "Multiple EMs are independently inventing their own explanations for a core product concept rather than using a shared narrative, creating recurring friction and inconsistent customer experience that risks confusion and lost expansion."
+  },
+  {
+    "id": 10,
+    "quote": "There's no moment in onboarding where the customer has a win. We just show them features and then leave. I've started manufacturing my own 'aha moment' but it's different every time.",
+    "category": "no_activation_loop",
+    "urgency": 2,
+    "fixability": 2,
+    "rationale": "Describes absence of a designed onboarding path to value, forcing EM to improvise inconsistent \"aha moments,\" creating recurring friction that risks poor time-to-value and churn."
+  },
+  {
+    "id": 11,
+    "quote": "I spent two hours last week recreating a workflow doc that I'm pretty sure someone else already built. I just couldn't find it.",
+    "category": "no_standards",
+    "urgency": 1,
+    "fixability": 3,
+    "rationale": "This is a textbook no_standards problem\u2014EM recreating an artifact they believe exists but can't locate; it's inefficient but hasn't caused customer harm yet (urgency 1), and is fixable with better documentation organization or a shared repository (fixability 3)."
+  },
+  {
+    "id": 12,
+    "quote": "Product dropped a big update two weeks ago. I still haven't had time to figure out what changed or whether it affects any of my accounts.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 2,
+    "fixability": 3,
+    "rationale": "Product shipped an update but the EM lacks awareness of what changed or customer impact, creating recurring friction that could lead to missed opportunities or incorrect guidance to accounts."
+  },
+  {
+    "id": 13,
+    "quote": "The customers who get the most value are the ones who have someone internally who owns it. When there's no internal champion it just dies.",
+    "category": "no_activation_loop",
+    "urgency": 3,
+    "fixability": 2,
+    "rationale": "This describes customer success as accidental (depending on whether they happen to have a champion) rather than designed, and explicitly mentions that accounts without champions \"just die\" (churn), which is an active customer-visible failure."
+  },
+  {
+    "id": 14,
+    "quote": "I don't have a good answer when a customer asks me what they should do in week two. Week one is fine, we have a flow. After that it's kind of improvised.",
+    "category": "no_activation_loop",
+    "urgency": 2,
+    "fixability": 2,
+    "rationale": "Week one has a designed flow but week two onward is improvised, creating recurring friction where the EM cannot guide customers to early wins, with plausible link to reduced expansion or churn."
+  },
+  {
+    "id": 15,
+    "quote": "We keep saying we'll do an internal training when things slow down. Things have not slowed down.",
+    "category": "knowledge_doesnt_travel",
+    "urgency": 2,
+    "fixability": 2,
+    "rationale": "Team recognizes a knowledge gap but has no process to transfer learning during normal operations, creating recurring friction as EMs operate without shared training that could reduce inefficiency and customer-facing inconsistency."
+  }
+]
