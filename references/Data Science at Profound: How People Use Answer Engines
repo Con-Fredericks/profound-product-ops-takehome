@@ -1,0 +1,44 @@
+---
+citation_key: Babbs et al., 2025
+apa_reference: Babbs, D., Vaghar, A., & Chandrappa, S. (2025, November 4). Data science at Profound: How people use answer engines. Profound Engineering Blog. https://www.tryprofound.com/engineering/data-science-at-profound-how-people-use-answer-engines
+title: Data Science at Profound: How People Use Answer Engines
+authors: Dylan Babbs (Co-founder, CTO); Ali Vaghar (Head of Data); Siddharth Chandrappa (Data Scientist)
+published: 2025-11-04
+source: Profound Engineering Blog
+url: https://www.tryprofound.com/engineering/data-science-at-profound-how-people-use-answer-engines
+retrieved: 2026-07-03
+used_for: Grounds the claim that Profound's Intent classification (Prompt Volumes) uses a fixed, pre-defined taxonomy applied by self-hosted LLMs, validated against an external reference distribution. Basis for the diagnosis methodology's claimed parallel to Profound's own Intent classification, as distinct from Sentiment's open-ended theme extraction.
+---
+
+# Data Science at Profound: How People Use Answer Engines
+
+At Profound, we gather hundreds of millions of conversations every month from third-party data providers. This richness of data, data being real user queries into answer engines like ChatGPT and others, has enabled us to recently launch Intent in Prompt Volumes, where we categorize and go a level deeper into these hundreds of millions of chat interactions.
+
+We ask ourselves countless questions every day: how do people use answer engines? Why do they prompt ChatGPT, Claude, or Perplexity? How can we break this down by topic and subtopic? Are users researching, shopping, or exploring? And given all these dimensions, how can we dig deeper into a corpus that's high-dimensional, noisy, and incredibly dense?
+
+## Getting the Data
+
+We didn't always have a billion-entry, multi-dimensional data problem. Before our Series A, our dataset was relatively sparse, just a few hundred thousand entries, but we had one conviction from the start: data hides stories. With new funding after the Series A, Profound invested in data at scale: hundreds of millions of conversations streaming in monthly.
+
+## Inside the Data: Key Search
+
+Before building semantic or intent models, the first thing to do was to analyze the words themselves. Profound began with large-scale keyword extraction and n-gram analysis, using the Aho-Corasick algorithm for multi-pattern string search (O(l + d), where l is corpus length and d is the number of patterns), to quantify what people talk about and how that changes over time.
+
+## Inside the Data: Semantic Search
+
+Text-based search alone misses semantically related queries with no exact keyword match (e.g. "car insurance" vs. "auto coverage plans"). Profound built its own RAG (Retrieval-Augmented Generation) pipeline: chunking each chat thread into overlapping context windows, embedding each chunk into a high-dimensional vector space, indexing embeddings in Milvus with metadata for query-time filtering, retrieving via approximate nearest neighbors, and reranking beyond raw cosine similarity to maximize relevance.
+
+## Building a Classifier
+
+With search and semantic layers in place, the next question was **why** people are prompting; i.e. categorizing conversations by intent (commercial, informational, generative, and deeper sub-categories). Two approaches were explicitly rejected:
+
+1. Calling public LLM APIs directly - workable at hundreds of thousands of conversations, but infeasible in time and cost at Profound's true scale.
+2. Traditional NLP classification approaches - not flexible enough; any given classification would need careful tuning and would not generalize to other classification tasks.
+
+To resolve this, Profound built and hosted its own language models on GPU-based inference clusters, giving fine control over optimization parameters and maximal throughput, trading off speed and generalizability more effectively than either alternative.
+
+While building this, OpenAI released "How People Use ChatGPT," which used a similar method to categorize user conversations into intent categories (e.g. asking, doing, expressing), some simple and some with dozens of deeper sub-topics. Profound replicated this study on its own dataset using the same prompt set as the original paper, both for validation and to confirm representativeness: since Profound's underlying conversation data comes from third-party providers, there's inherent risk the panel doesn't reflect the true population distribution. The model achieved strong alignment with OpenAI's reference distributions, which Profound treats as confirmation that its dataset mirrors real-world usage patterns rather than being a data artifact.
+
+## What's Next
+
+Profound intends to extend this replication approach to analyze how people use Gemini, Claude, Perplexity, and other answer engines, with the broader goal of observing how production data distributions evolve over time rather than capturing a single point-in-time snapshot.
